@@ -7,7 +7,7 @@ import {
   Cart,
   WishList
 } from '../pages'
-import Navbar from '../components/Template/Navbar'
+import { Navbar, Footer } from '../components/Template'
 import {
   BrowserRouter as Router,
   Route,
@@ -40,6 +40,7 @@ function RouteConfig() {
             <ProductDetails />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </div>
   )
