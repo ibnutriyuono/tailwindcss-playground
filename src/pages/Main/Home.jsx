@@ -1,12 +1,13 @@
 import React from 'react'
+import Hero from '../../components/Main/Hero'
 import ProductList from '../../components/Main/ProductList'
 
 function Home() {
   return (
-    <div>
-      <h1>User Home</h1>
+    <>
+      <Hero />
       <ProductList />
-    </div>
+    </>
   )
 }
 

@@ -1,6 +1,8 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
 function Hero() {
+  const history = useHistory()
   return (
     <div className="text-gray-600 body-font">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -12,7 +14,11 @@ function Hero() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates possimus distinctio sunt tenetur velit maiores. Dolorem, odio? Pariatur libero dolorum voluptatem, maiores mollitia tempore, quod ratione assumenda expedita consequatur eius blanditiis veritatis est tempora rerum praesentium earum. Itaque, at autem?
           </p>
         </div>
-        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <div
+          className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 cursor-pointer"
+          onClick={() => {
+            history.push(`/products/2`)
+          }}>
           <img className="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600"/>
         </div>
       </div>
