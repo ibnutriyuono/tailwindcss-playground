@@ -2,7 +2,8 @@ import React from 'react'
 import {
   Home,
   ProductDetails,
-  UserAuth,
+  UserLogin,
+  UserRegister,
   Profile,
   Cart,
   WishList
@@ -24,8 +25,11 @@ function RouteConfig() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/auth">
-            <UserAuth />
+          <Route path="/login">
+            <UserLogin />
+          </Route>
+          <Route path="/register">
+            <UserRegister />
           </Route>
           <Route path="/wishlist">
             <WishList />
