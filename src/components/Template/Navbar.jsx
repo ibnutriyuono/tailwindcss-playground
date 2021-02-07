@@ -1,19 +1,20 @@
-import React from 'react'
-import { NavLink, useLocation } from "react-router-dom"
+import React, { useEffect } from 'react'
+import { NavLink } from "react-router-dom"
+import { useSelector } from 'react-redux'
 
 function Navbar(props) {
-  const { pathname } = useLocation()
+  const { isLoggedIn } = useSelector(state => state.user)
   return (
     <nav className="md:flex md:justify-between md:flex-row border-b items-center">
       <h1 className="font-bold text-lg uppercase p-4">
         <NavLink exact to="/" activeStyle={{
-          color: "red"
+          color: "green"
         }}>
-          Mity Commerce
+          Mity Commerce 
         </NavLink>
       </h1>
       {
-        !props.isLoggedIn
+        isLoggedIn
           ? <ul className="md:flex">
               <li>
                 <div onClick={() => alert('ALLO')} className="cursor-pointer">
@@ -22,7 +23,7 @@ function Navbar(props) {
               </li>
               <li>
                 <NavLink to="/profile" activeStyle={{
-                  color: "red"
+                  color: "green"
                 }}>
                   <i 
                     className="fa fa-user fa-lg p-4 mr-3"/>
@@ -30,7 +31,7 @@ function Navbar(props) {
               </li>
               <li>
                 <NavLink to="/wishlist" activeStyle={{
-                  color: "red"
+                  color: "green"
                 }}>
                   <i 
                     className="fa fa-heart fa-lg p-4 mr-3"/>
@@ -38,7 +39,7 @@ function Navbar(props) {
               </li>
               <li>
                 <NavLink to="/cart" activeStyle={{
-                  color: "red"
+                  color: "green"
                 }}>
                   <i 
                     className="fa fa-shopping-cart fa-lg p-4 mr-3"/>
@@ -48,8 +49,8 @@ function Navbar(props) {
           : <ul className="md:flex">
               <li>
                 <h1 className="font-bold text-lg uppercase p-4">
-                  <NavLink to="/auth" activeStyle={{
-                    color: "red"
+                  <NavLink to="/login" activeStyle={{
+                    color: "green"
                   }}>
                     Login
                   </NavLink>
@@ -57,8 +58,8 @@ function Navbar(props) {
               </li>
               <li>
                 <h1 className="font-bold text-lg uppercase p-4">
-                  <NavLink to="/auth" activeStyle={{
-                    color: "red"
+                  <NavLink to="/register" activeStyle={{
+                    color: "green"
                   }}>
                     Register
                   </NavLink>
